@@ -38,16 +38,21 @@
                             $madb = new PDO('sqlite:DB/database.sqlite'); 
                             $login= $madb->quote($login);
                             $passwd = $madb->quote($passwd);
-                            $query = "SELECT status FROM Users WHERE login LIKE $login AND passwd LIKE $passwd;";
+                            $query = "SELECT * FROM Users WHERE login LIKE $login AND passwd LIKE $passwd;";
                             $result = $madb->query($query);
                             $row = $result->fetch();
                             $status = $row[0];
                             connection_log($login, $status);
 
                             session_start();
-                            $_SESSION["status"] = $status;
+                            $_SESSION["id"] = $row[0];
+                            $_SESSION["status"] = $row[3];
+                            $_SESSION["login"] = $row[1];
+                            $_SESSION["passwd"] = $row[2];
+
                             // var_dump($_SESSION["status"]);
                             header("Location: http://localhost/WEB2/IUT-Projet-WEB/index.php");
+                            die();
                         }
                         
                         else{
