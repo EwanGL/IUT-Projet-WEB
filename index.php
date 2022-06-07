@@ -108,30 +108,6 @@
                 
                 <input type="submit" id='submit' value='Filtrer'>
             </form>
-           
-            <!-- <div class="dropdown">
-                <button
-                    
-                    class="btn btn-primary dropdown-toggle"
-                    name="groups"
-                    type="button"
-                    id="dropdownMenuButton"
-                    data-mdb-toggle="dropdown"
-                    aria-expanded="false">Groupe :
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                     <li><a class="dropdown-item" href="#">Principal</a></li> comment !!!
-                    
-                    <li><button type="button" class="btn btn-primary" onclick="sendAjax('Principal')">Principal</button></li>
-                    <li><button type="button" class="btn btn-primary" onclick="sendAjax('Famille')">Famille</button></li>
-                    <li><button type="button" class="btn btn-primary" onclick="sendAjax('Professionnel')">Professionnel</button></li>
-                    <li><button type="button" class="btn btn-primary" onclick="sendAjax('Autres')">Autres</button></li>
-                    
-                </ul>
-            </div> -->
-
-
-
         </section>
 
         <?php

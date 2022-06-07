@@ -28,43 +28,40 @@ function verifyPassword() {
     return (not_empty && maj && sp_char);
 }
 
-// function sendAjax(args){
-//     alert(arguments[0]);
+function onSubmit(token) {
+    document.getElementById("insert_form").submit();
+}
 
-//     var req_ajax = null;
-//     if (window.XMLHttpRequest){
-//         req_ajax = new XMLHttpRequest();
-//     }
+function verifyInsertForm(){
+    var name =  document.getElementById("validationCustom01");
+    var last_name =  document.getElementById("validationCustom02");
+    var phone =  document.getElementById("validationCustom03");
+    var email =  document.getElementById("validationCustom04");
 
-//     else{
-//         if (typeof ActiveXObject != "undifined"){
-//             req_ajax = new ActiveXObject("Microsoft.XMLHTTP");
-//         }
-//         if (req_ajax){
-//             req_ajax.onreadychange = function(){
-//                 answerProcess(req_ajax);
-//             };
-//             req_ajax.open("GET", "index.php?action=marche", true);
-//             req_ajax.send(null);
-//         }
-//         else{
-//             alert("Pas de XMLHTTP") 
-//         }
-//     }
-    
-// };
+    if ((name != "" ) && ((last_name != "" ) && (typeof(phone) == "number") && (email.indexOf('@') > -1))){
+        return true;
+    }
+    else{
+        alert("Veuillez compléter correctement le formulaire !");
+        return false;
+    }
 
-// function answerProcess(args){
-//     var ready = arguments[0].readyState;
-//     if (ready == 4){
-//         var index_tab = document.getElementById("index_tab");
-//         var status = arguments[0].status;
-//         if (status == 200){
-//             var data = arguments[0].responseText;
-//             index_tab.innerHTML=data;
-//         }
-//         else{
-//             index_tab.innerHTML = "server error, code :" + status; 
-//         }
-//     }
-// }
+}
+
+(() => {
+    'use strict';
+  
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    const forms = document.querySelectorAll('.needs-validation');
+  
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms).forEach((form) => {
+      form.addEventListener('submit', (event) => {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  })();
