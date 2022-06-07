@@ -41,16 +41,15 @@
                             $query = "SELECT * FROM Users WHERE login LIKE $login AND passwd LIKE $passwd;";
                             $result = $madb->query($query);
                             $row = $result->fetch();
-                            $status = $row[0];
-                            connection_log($login, $status);
-
+                            
                             session_start();
                             $_SESSION["id"] = $row[0];
                             $_SESSION["status"] = $row[3];
                             $_SESSION["login"] = $row[1];
                             $_SESSION["passwd"] = $row[2];
-
-                            // var_dump($_SESSION["status"]);
+                            
+                            connection_log($_SESSION["login"], $_SESSION["status"]);
+                            
                             header("Location: http://localhost/WEB2/IUT-Projet-WEB/index.php");
                             die();
                         }

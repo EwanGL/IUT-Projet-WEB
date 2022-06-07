@@ -27,3 +27,44 @@ function verifyPassword() {
     
     return (not_empty && maj && sp_char);
 }
+
+// function sendAjax(args){
+//     alert(arguments[0]);
+
+//     var req_ajax = null;
+//     if (window.XMLHttpRequest){
+//         req_ajax = new XMLHttpRequest();
+//     }
+
+//     else{
+//         if (typeof ActiveXObject != "undifined"){
+//             req_ajax = new ActiveXObject("Microsoft.XMLHTTP");
+//         }
+//         if (req_ajax){
+//             req_ajax.onreadychange = function(){
+//                 answerProcess(req_ajax);
+//             };
+//             req_ajax.open("GET", "index.php?action=marche", true);
+//             req_ajax.send(null);
+//         }
+//         else{
+//             alert("Pas de XMLHTTP") 
+//         }
+//     }
+    
+// };
+
+// function answerProcess(args){
+//     var ready = arguments[0].readyState;
+//     if (ready == 4){
+//         var index_tab = document.getElementById("index_tab");
+//         var status = arguments[0].status;
+//         if (status == 200){
+//             var data = arguments[0].responseText;
+//             index_tab.innerHTML=data;
+//         }
+//         else{
+//             index_tab.innerHTML = "server error, code :" + status; 
+//         }
+//     }
+// }
