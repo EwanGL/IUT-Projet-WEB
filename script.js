@@ -33,6 +33,7 @@ function onSubmit(token) {
 }
 
 function verifyInsertForm(){
+    alert("funuction");
     var name =  document.getElementById("validationCustom01");
     var last_name =  document.getElementById("validationCustom02");
     var phone =  document.getElementById("validationCustom03");
@@ -47,21 +48,3 @@ function verifyInsertForm(){
     }
 
 }
-
-(() => {
-    'use strict';
-  
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    const forms = document.querySelectorAll('.needs-validation');
-  
-    // Loop over them and prevent submission
-    Array.prototype.slice.call(forms).forEach((form) => {
-      form.addEventListener('submit', (event) => {
-        if (!form.checkValidity()) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
-        form.classList.add('was-validated');
-      }, false);
-    });
-  })();

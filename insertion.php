@@ -34,7 +34,7 @@
         <h1>Ajoutez un contact</h1>
 
         
-        <form id="insert_form" action="#" method="POST" class="row g-3 needs-validation" novalidate onsubmit="return verifyInsertForm()">
+        <form id="insert_form" action="#" method="POST" class="row g-3 needs-validation" novalidate >
             <div class="col-md-4">
                 <div class="form-outline">
                 <input type="text" class="form-control" id="validationCustom01" value="" name="name" required /> 
@@ -100,7 +100,7 @@
         include "function.php";
 
         if(!empty($_POST)){
-            // var_dump($_POST);
+            var_dump($_POST);
             DbInsert($_POST["name"], $_POST["last_name"], $_POST["email"], $_POST["phone"], $_POST["group"], $_SESSION["id"]);
         }
         ?>
