@@ -31,32 +31,80 @@
             }
         ?>
 
-        <h1>Ajoutez un contact</h1>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <!-- Container wrapper -->
+            <div class="container-fluid">
+                <!-- Toggle button -->
+                <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
 
+                <!-- Collapsible wrapper -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Left links -->
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                        <a class="nav-link" href="index.php">Page principale</a>
+                        </li>
+                        <?php 
+                            if(isset($_SESSION) && $_SESSION['status']=='admin'){
+                                echo '<li class="nav-item">';
+                                echo '<a class="nav-link" href="insertion.php">Insertion</a>';
+                                echo '</li>';
+                                echo '<li class="nav-item">';
+                                echo '<a class="nav-link" href="modification.php">Modification</a>';
+                                echo '</li>';
+                            }
+                        ?>
+                    </ul>
+                    <!-- Left links -->
+                </div>
+                
+                    <!-- Avatar -->
+                <div class="dropdown">
+                    <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuAvatar" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                        <img src="img/user.png" alt="user icon" loading="lazy">
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
+                        <li>
+                            <a class="dropdown-item" href="#">My profile (<?php echo $_SESSION['login'] ?>)</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">Settings</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="logout.php">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <h1>Ajouter un Contact</h1>
         
-        <form id="insert_form" action="#" method="POST" class="row g-3 needs-validation" novalidate >
-            <div class="col-md-4">
+        <form id="insert_form" action="#" method="POST" class="row g-3 needs-validation" novalidate onsubmit="return verifyInsertForm()">
+            <div class="col-md-6">
                 <div class="form-outline">
                 <input type="text" class="form-control" id="validationCustom01" value="" name="name" required /> 
                 <label for="validationCustom01" class="form-label">Prénom</label>
                 <div class="valid-feedback">Looks good!</div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="form-outline">
                 <input type="text" class="form-control" id="validationCustom02" value="" name="last_name" required />
                 <label for="validationCustom02" class="form-label">Nom</label>
                 <div class="valid-feedback">Looks good!</div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="form-outline">
                 <input type="text" class="form-control" id="validationCustom03" value="" name="phone" required />
                 <label for="validationCustom02" class="form-label">Numéro de téléphone</label>
                 <div class="valid-feedback">Looks good!</div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="form-outline">
                 <input type="text" class="form-control" id="validationCustom04" value="" name="email" required />
                 <label for="validationCustom02" class="form-label">Email</label>
@@ -64,29 +112,28 @@
                 </div>
             </div>
             
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="group" id="flexRadioDefault1" checked value="Principal"/>
-                <label class="form-check-label" for="flexRadioDefault1">Principal</label>
+            <div class="col-md-2 ins_radio">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" checked value="Principal" />
+                <label class="form-check-label" for="inlineRadio1">Principal</label>
             </div>
 
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="group" id="flexRadioDefault2"  value="Famille"/>
-                <label class="form-check-label" for="flexRadioDefault2">Famille</label>
+            <div class="col-md-2 ins_radio">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio6" value="Famille" />
+                <label class="form-check-label" for="inlineRadio1">Famille</label>
+            </div>
+            
+            <div class="col-md-2 ins_radio">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio7" value="Professionnel" />
+                <label class="form-check-label" for="inlineRadio1">Professionnel</label>
+            </div>
+            
+            <div class="col-md-2 ins_radio">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio8" value="Autres" />
+                <label class="form-check-label" for="inlineRadio1">Autres</label>
             </div>
 
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="group" id="flexRadioDefault2"  value="Travail"/>
-                <label class="form-check-label" for="flexRadioDefault2">Professionnel</label>
-            </div>
-
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="group" id="flexRadioDefault2"  value="Autres"/>
-                <label class="form-check-label" for="flexRadioDefault2">Autres</label>
-            </div>
-
-
-            <div class="col-12">
-                <button class="btn btn-primary g-recaptcha" type="submit" data-sitekey="6LfxP1EgAAAAAHBY8Cf5kujJtGR8OCf2c0V7Hpgf" data-callback='onSubmit' data-action='submit'>Submit</button>
+            <div class="col-md-12">
+                <input class="btn btn-primary g-recaptcha" id="ins_button" type="submit" data-sitekey="6LfxP1EgAAAAAHBY8Cf5kujJtGR8OCf2c0V7Hpgf" data-callback='onSubmit' data-action='submit' value="Submit">
             </div>
         </form>
 
@@ -100,11 +147,14 @@
         include "function.php";
 
         if(!empty($_POST)){
-            var_dump($_POST);
+            // var_dump($_POST);
             DbInsert($_POST["name"], $_POST["last_name"], $_POST["email"], $_POST["phone"], $_POST["group"], $_SESSION["id"]);
         }
         ?>
     
         <script type="text/javascript" src="js/mdb.min.js"></script>
+        <footer>
+            <p>Contacts - Ewan GRIGNOUX-LEVERT</p>
+        </footer>
     </body>
 <html>

@@ -5,24 +5,33 @@
         <meta charset="UTF-8">
         <link href="http://localhost/WEB2/IUT-Projet-WEB/style.css" rel="stylesheet" type="text/css">
         <script src="http://localhost/WEB2/IUT-Projet-WEB/script.js"></script>
+        
         <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
         <meta http-equiv="Pragma" content="no-cache" />
         <meta http-equiv="Expires" content="0" />
 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css%22/%3E">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap%22/%3E">
+        <link rel="stylesheet" href="http://localhost/WEB2/IUT-Projet-WEB/css/mdb.min.css" type="text/css"/>
+
         </head>
         
         <body>
-            <section class="formulaires">
+            <h1>Bienvenue sur Contacts</h1>
+            <section id="co_form">
                 <form action="#" method="POST" onsubmit="return verifyPassword()" id="connect_form">
-                    <h1>Connexion</h1>
+                    <h2>Connexion</h2>
                     
-                    <label><b>Nom d utilisateur</b></label>
-                    <input type="text" placeholder="Entrer le nom d'utilisateur" name="username" required></br>
+                    <div class="form-outline">
+                        <input type="text"  name="username" class="form-control" placeholder="Nom d'utilisateur" require/>
+                    </div>
 
-                    <label><b>Mot de passe</b></label>
-                    <input type="password" placeholder="Entrer le mot de passe" name="password" id="password" required></br>
+                    <label><b></b></label>
+                    <div class="form-outline">
+                        <input type="password" name="password" class="form-control" placeholder="Mot de passe" require/>
+                    </div>
 
-                    <input type="submit" id='submit' value='LOGIN'>
+                    <input type="submit" class="btn btn-primary" id="co_button" value='LOGIN'>
                 </form>
                 <?php
                     include "function.php" ;
@@ -61,5 +70,9 @@
                     }
                 ?>
         </section>
+        <script type="text/javascript" src="js/mdb.min.js"></script>
+        <footer>
+            <p>Contacts - Ewan GRIGNOUX-LEVERT</p>
+        </footer>
     </body>
 </html>

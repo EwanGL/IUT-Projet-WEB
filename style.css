@@ -1,0 +1,131 @@
+@import '~mdb-ui-kit/css/mdb.min.css';
+
+::after, ::before {
+    box-sizing: border-box;
+}
+
+h1, h2{
+    text-align: center;
+    padding: 2%;
+}
+
+body{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    width: 100%;
+}
+
+#co_form{
+    padding : 5%;
+    text-align: center;
+    margin-top: 4%;
+    margin-left: 30%;
+    width : 40%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 20px;
+}
+
+#co_button, #ind_from *{
+    margin: 1%;
+    height: 10%;
+}
+
+#ind_form{
+    text-align: center;
+    padding: 0.5%;
+    margin-left: 30%;
+    margin-bottom: 2%;
+    width : 40%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 20px;
+}
+
+#index_tab{
+    width: 80%;
+    margin-left: 10%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    text-align: center;
+}
+
+#insert_form, #select_form, #modif_form{
+    width: 80%;
+    margin-left: 10%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 20px;
+}
+
+.ins_radio{
+    margin-left: 5%;
+}
+
+#ins_button, #modif_button{
+    width: 20%;
+    margin-left: 40%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+#select_form{
+    margin-bottom: 3%;
+}
+
+#select_form_div{
+    width: 20%;
+    margin-left: 40%;
+    margin-top: 1%;
+    
+}
+
+#select_form_div button, #select_form_div div{
+    float: left;
+    margin-bottom: 5%;
+}
+
+footer{
+    margin-top: 5%;
+    margin-bottom: 0%;
+    width: 100%;
+    text-align: center;
+}
+
+/* :root {
+    --body-bg: white;
+    --body-color: black;
+    --anchor-color: red;
+    --letter-spacing: 0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --body-bg: black;
+      --body-color: white;
+      --anchor-color: salmon;
+      --letter-spacing: 0.1;
+    }
+}
+
+body {
+    background-color: var(--body-bg);
+    color: var(--body-color);
+    letter-spacing: var(--letter-spacing);
+  }
+  a {
+    color: var(--anchor-color);
+}
+
+@media (prefers-color-scheme: dark) {
+
+    html {
+      filter: invert(1) hue-rotate(.5turn);
+    }
+  
+    img {
+      filter: invert(1) hue-rotate(.5turn);
+    }
+  
+    img:not(:hover) {
+      opacity: .7;
+      transition: opacity .25s ease-in-out;
+    }
+  } */

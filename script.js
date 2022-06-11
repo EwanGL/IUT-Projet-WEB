@@ -1,3 +1,6 @@
+import * as mdb from 'mdb-ui-kit'; // lib
+import { Input } from 'mdb-ui-kit'; // module
+
 function verifyPassword() {
     var not_empty = false;
     var maj = false;
@@ -26,19 +29,19 @@ function verifyPassword() {
     // console.log(not_empty && maj && sp_char);
     
     return (not_empty && maj && sp_char);
-}
+};
 
 function onSubmit(token) {
     document.getElementById("insert_form").submit();
-}
+};
 
 function verifyInsertForm(){
-    alert("funuction");
-    var name =  document.getElementById("validationCustom01");
-    var last_name =  document.getElementById("validationCustom02");
-    var phone =  document.getElementById("validationCustom03");
-    var email =  document.getElementById("validationCustom04");
-
+    alert("function");
+    var name =  document.getElementById("validationCustom01").value;
+    var last_name =  document.getElementById("validationCustom02").value;
+    var phone =  document.getElementById("validationCustom03").value;
+    var email =  document.getElementById("validationCustom04").value;
+    
     if ((name != "" ) && ((last_name != "" ) && (typeof(phone) == "number") && (email.indexOf('@') > -1))){
         return true;
     }
@@ -46,5 +49,9 @@ function verifyInsertForm(){
         alert("Veuillez compléter correctement le formulaire !");
         return false;
     }
+    
+};
 
-}
+function myFunction() {
+  alert("The form was submitted");
+};
