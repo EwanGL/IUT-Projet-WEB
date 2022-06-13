@@ -83,49 +83,19 @@ body{
     margin-bottom: 5%;
 }
 
+#sec_profil{
+    padding : 5%;
+    text-align: center;
+    margin-top: 4%;
+    margin-left: 30%;
+    width : 40%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 20px;
+}
+
 footer{
     margin-top: 5%;
     margin-bottom: 0%;
     width: 100%;
     text-align: center;
 }
-
-/* :root {
-    --body-bg: white;
-    --body-color: black;
-    --anchor-color: red;
-    --letter-spacing: 0;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --body-bg: black;
-      --body-color: white;
-      --anchor-color: salmon;
-      --letter-spacing: 0.1;
-    }
-}
-
-body {
-    background-color: var(--body-bg);
-    color: var(--body-color);
-    letter-spacing: var(--letter-spacing);
-  }
-  a {
-    color: var(--anchor-color);
-}
-
-@media (prefers-color-scheme: dark) {
-
-    html {
-      filter: invert(1) hue-rotate(.5turn);
-    }
-  
-    img {
-      filter: invert(1) hue-rotate(.5turn);
-    }
-  
-    img:not(:hover) {
-      opacity: .7;
-      transition: opacity .25s ease-in-out;
-    }
-  } */

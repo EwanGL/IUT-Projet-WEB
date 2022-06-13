@@ -61,12 +61,12 @@
 
 
             if (sizeof($tableau_assoc)!=0){
-                echo "<script>alert('Cette personne est déjà dans votre carnet');</script>";
+                echo "<p>Cette personne est déjà dans votre carnet</p>";
             }
             else{
                 $query = "INSERT INTO Coordonnees (nom, prenom, phoneNumber, email, idUsers, groups) VALUES($last_name, $name, $phone, $email, $id_user, $groups);";
                 $madb->query($query);
-                echo "<script>alert('Cette personne as été ajouté dans votre carnet');</script>";
+                echo "<p>Cette personne as été ajouté dans votre carnet</p>";
             }
         }
         else{
@@ -94,12 +94,12 @@
 
 
             if ($infos == $tableau_assoc){
-                echo "<script>alert('Cette personne est déjà dans votre carnet');</script>";
+                echo "<p>Cette personne est déjà dans votre carnet</p>";
             }
             else{
                 $query = "UPDATE Coordonnees SET nom=$last_name, prenom=$name, phoneNumber=$phone, email=$email, groups=$groups WHERE email=$email AND idUsers = $id;";
                 $madb->query($query);
-                echo "<script>alert('Les informations de cette personne ont été modifié avec succès');</script>";
+                echo "<p>Les informations de cette personne ont été modifié avec succès</p>";
             }
         }
         else{

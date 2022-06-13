@@ -3,8 +3,8 @@
     <head>
         <title>Index</title>
         <meta charset="UTF-8">
-        <link href="http://localhost/WEB2/IUT-Projet-WEB/style.css" rel="stylesheet" type="text/css">
-        <script src="http://localhost/WEB2/IUT-Projet-WEB/script.js"></script>
+        <link href="style.css" rel="stylesheet" type="text/css">
+        <script src="script.js"></script>
         <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
         <meta http-equiv="Pragma" content="no-cache" />
         <meta http-equiv="Expires" content="0" />
@@ -21,12 +21,12 @@
             session_start();
             if($_SESSION["status"] == NULL){
                 session_destroy();
-                header("Location: http://localhost/WEB2/IUT-Projet-WEB/connexion.php");
+                header("Location: connexion.php");
                 die();
             }
 
             else if ($_SESSION["status"] != "admin"){
-                header("Location: http://localhost/WEB2/IUT-Projet-WEB/index.php");
+                header("Location: index.php");
                 die();
             }
         ?>
@@ -123,17 +123,17 @@
             </div>
             
             <div class="col-md-2 ins_radio">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio7" value="Professionnel" />
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio7" value="Travail" />
                 <label class="form-check-label" for="inlineRadio1">Professionnel</label>
             </div>
             
             <div class="col-md-2 ins_radio">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio8" value="Autres" />
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio8" value="Autre" />
                 <label class="form-check-label" for="inlineRadio1">Autres</label>
             </div>
 
             <div class="col-md-12">
-                <input class="btn btn-primary g-recaptcha" id="ins_button" type="submit" data-sitekey="6LfxP1EgAAAAAHBY8Cf5kujJtGR8OCf2c0V7Hpgf" data-callback='onSubmit' data-action='submit' value="Submit">
+                <input class="btn btn-primary btn-rounded g-recaptcha" id="ins_button" type="submit" data-sitekey="6LfxP1EgAAAAAHBY8Cf5kujJtGR8OCf2c0V7Hpgf" data-callback='onSubmit' data-action='submit' value="Submit">
             </div>
         </form>
 
@@ -148,13 +148,18 @@
 
         if(!empty($_POST)){
             // var_dump($_POST);
-            DbInsert($_POST["name"], $_POST["last_name"], $_POST["email"], $_POST["phone"], $_POST["group"], $_SESSION["id"]);
+            DbInsert($_POST["name"], $_POST["last_name"], $_POST["email"], $_POST["phone"], $_POST["inlineRadioOptions"], $_SESSION["id"]);
         }
         ?>
     
         <script type="text/javascript" src="js/mdb.min.js"></script>
-        <footer>
-            <p>Contacts - Ewan GRIGNOUX-LEVERT</p>
+        <footer class="bg-light text-center text-lg-start">
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                © 2020 Copyright:
+                <a class="text-dark" href="https://mdbootstrap.com/">GRIGNOUX-LEVERT Ewan</a>
+            </div>
+            <!-- Copyright -->
         </footer>
     </body>
 <html>

@@ -3,8 +3,8 @@
     <head>
         <title>Acceuil</title>
         <meta charset="UTF-8">
-        <link href="http://localhost/WEB2/IUT-Projet-WEB/style.css" rel="stylesheet" type="text/css">
-        <script src="http://localhost/WEB2/IUT-Projet-WEB/script.js"></script>
+        <link href="style.css" rel="stylesheet" type="text/css">
+        <script src="script.js"></script>
         <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
         <meta http-equiv="Pragma" content="no-cache" />
         <meta http-equiv="Expires" content="0" />
@@ -59,13 +59,10 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
                         <li>
-                            <a class="dropdown-item" href="#">My profile (<?php echo $_SESSION['login'] ?>)</a>
+                            <a class="dropdown-item" href="#">Mon profil (<?php echo $_SESSION["login"] ?>)</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#">Settings</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="logout.php">Logout</a>
+                            <a class="dropdown-item" href="logout.php">Se déconnecter</a>
                         </li>
                     </ul>
                 </div>
@@ -90,16 +87,21 @@
                 </div>
                 
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="Professionnel" />
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="Travail" />
                     <label class="form-check-label" for="inlineRadio1">Professionnel</label>
                 </div>
                 
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="Autres" />
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="Autre" />
                     <label class="form-check-label" for="inlineRadio1">Autres</label>
                 </div>
+
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio13" value="Tout" />
+                    <label class="form-check-label" for="inlineRadio1">Tout</label>
+                </div>
                 
-                <input type="submit" class="btn btn-primary" id="ind_button" value='Filtrer'>
+                <input type="submit" class="btn btn-primary btn-rounded" id="ind_button" value='Filtrer'>
             </form>
         </section>
 
@@ -109,16 +111,22 @@
         
         if($_SESSION["status"] == NULL){
             session_destroy();
-            header("Location: http://localhost/WEB2/IUT-Projet-WEB/connexion.php");
+            header("Location: connexion.php");
             die();
         }
 
         $madb = new PDO('sqlite:'.$_SERVER["DOCUMENT_ROOT"]."/WEB2/IUT-Projet-WEB/DB/database.sqlite") ;
         
         if (!empty($_GET)){
-            // var_dump($_GET["inlineRadioOptions"]);
-            $groups_filtre= $madb->quote($_GET["inlineRadioOptions"]);
+            if ($_GET["inlineRadioOptions"] == "Tout"){
+                $query = 'SELECT * FROM Coordonnees WHERE idUsers LIKE '.$_SESSION["id"].';';
+            }
+            else{
+                $groups_filtre= $madb->quote($_GET["inlineRadioOptions"]);
             $query = 'SELECT * FROM Coordonnees WHERE idUsers LIKE '.$_SESSION["id"].' AND groups LIKE '.$groups_filtre.';';
+            }
+           
+            
             $result = $madb->query($query);
             $tb = "
                 <tr>
@@ -184,8 +192,13 @@
         ?>
 
         <script type="text/javascript" src="js/mdb.min.js"></script>
-        <footer>
-            <p>Contacts - Ewan GRIGNOUX-LEVERT</p>
+        <footer class="bg-light text-center text-lg-start">
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                © 2020 Copyright:
+                <a class="text-dark" href="https://mdbootstrap.com/">GRIGNOUX-LEVERT Ewan</a>
+            </div>
+            <!-- Copyright -->
         </footer>
     </body>
 

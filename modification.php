@@ -3,8 +3,9 @@
     <head>
         <title>Index</title>
         <meta charset="UTF-8">
-        <link href="http://localhost/WEB2/IUT-Projet-WEB/style.css" rel="stylesheet" type="text/css">
-        <script src="http://localhost/WEB2/IUT-Projet-WEB/script.js"></script>
+        <link href="style.css" rel="stylesheet" type="text/css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="script.js"></script>
         <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
         <meta http-equiv="Pragma" content="no-cache" />
         <meta http-equiv="Expires" content="0" />
@@ -88,7 +89,7 @@
                         <input type="search" id="form1" name="search" class="form-control" require/>
                         <label class="form-label" for="form1">Email</label>
                     </div>
-                    <button type="submit" class="btn btn-primary">
+                    <button type="submit" class="btn btn-primary btn-rounded">
                         <img src="img/search.png" alt="search icon" loading="lazy">
                     </button>
                 </div>
@@ -101,11 +102,11 @@
         
         if($_SESSION["status"] == NULL){
             session_destroy();
-            header("Location: http://localhost/WEB2/IUT-Projet-WEB/connexion.php");
+            header("Location: connexion.php");
             die();
         }
         else if ($_SESSION["status"] != "admin"){
-            header("Location: http://localhost/WEB2/IUT-Projet-WEB/index.php");
+            header("Location: index.php");
             die();
         }
 
@@ -238,7 +239,7 @@
 
         echo '
         <div class="col-md-12">
-            <input class="btn btn-primary g-recaptcha" id="modif_button" type="submit" data-sitekey="6LfxP1EgAAAAAHBY8Cf5kujJtGR8OCf2c0V7Hpgf" data-callback="onSubmit" data-action="submit" value="Submit">
+            <input class="btn btn-primary btn-rounded g-recaptcha" id="modif_button" type="submit" data-sitekey="6LfxP1EgAAAAAHBY8Cf5kujJtGR8OCf2c0V7Hpgf" data-callback="onSubmit" data-action="submit" value="Submit">
         </div>
         </form>';
         }
@@ -247,6 +248,7 @@
             // var_dump($_POST);
             DbModif($_POST["name"], $_POST["last_name"], $_POST["email"], $_POST["phone"], $_POST["groups"], $_SESSION["id"]);
             echo '<script type="text/JavaScript"> grecaptcha.reset();location.reload(); </script>';
+            echo "<script>ajaxModif();</script>";
         }
         ?>
         
@@ -256,8 +258,13 @@
             }
         </script>
         <script type="text/javascript" src="js/mdb.min.js"></script>
-        <footer>
-            <p>Contacts - Ewan GRIGNOUX-LEVERT</p>
+        <footer class="bg-light text-center text-lg-start">
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                © 2020 Copyright:
+                <a class="text-dark" href="https://mdbootstrap.com/">GRIGNOUX-LEVERT Ewan</a>
+            </div>
+            <!-- Copyright -->
         </footer>
     </body>
 
