@@ -67,10 +67,7 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
                         <li>
-                            <a class="dropdown-item" href="#">My profile (<?php echo $_SESSION['login'] ?>)</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Settings</a>
+                            <a class="dropdown-item" href="profil.php">My profile (<?php echo $_SESSION['login'] ?>)</a>
                         </li>
                         <li>
                             <a class="dropdown-item" href="logout.php">Logout</a>
@@ -135,7 +132,7 @@
             <div class="col-md-12">
                 <input class="btn btn-primary btn-rounded g-recaptcha" id="ins_button" type="submit" data-sitekey="6LfxP1EgAAAAAHBY8Cf5kujJtGR8OCf2c0V7Hpgf" data-callback='onSubmit' data-action='submit' value="Submit">
             </div>
-        </form>
+        
 
         <script>
             function onSubmit(token) {
@@ -151,13 +148,13 @@
             DbInsert($_POST["name"], $_POST["last_name"], $_POST["email"], $_POST["phone"], $_POST["inlineRadioOptions"], $_SESSION["id"]);
         }
         ?>
-    
+        </form>
         <script type="text/javascript" src="js/mdb.min.js"></script>
         <footer class="bg-light text-center text-lg-start">
             <!-- Copyright -->
             <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
                 © 2020 Copyright:
-                <a class="text-dark" href="https://mdbootstrap.com/">GRIGNOUX-LEVERT Ewan</a>
+                <a class="text-dark" href="https://github.com/EwanGL">GRIGNOUX-LEVERT Ewan</a>
             </div>
             <!-- Copyright -->
         </footer>

@@ -20,7 +20,7 @@
     function connection_log($login, $status){
         $ip = $_SERVER['REMOTE_ADDR'];
 
-        $file = fopen("C:\Users\Ewan GRIGNOUX-LEVERT\Documents\Cours\WEB\WEB2\logs web projet\log.txt", "a");
+        $file = fopen("log\access.log", "a");
         $tdate=getdate();
         $jour=sprintf("%02.2d",$tdate["mday"])."/".sprintf("%02.2d",$tdate["mon"])."/".$tdate["year"];
         $heure=sprintf("%02.2d",$tdate["hours"])."H".sprintf("%02.2d",$tdate["minutes"]);
@@ -61,16 +61,16 @@
 
 
             if (sizeof($tableau_assoc)!=0){
-                echo "<p>Cette personne est déjà dans votre carnet</p>";
+                echo "<p class='p_css'>Cette personne est déjà dans votre carnet</p>";
             }
             else{
                 $query = "INSERT INTO Coordonnees (nom, prenom, phoneNumber, email, idUsers, groups) VALUES($last_name, $name, $phone, $email, $id_user, $groups);";
                 $madb->query($query);
-                echo "<p>Cette personne as été ajouté dans votre carnet</p>";
+                echo "<p class='p_css'>Cette personne as été ajouté dans votre carnet</p>";
             }
         }
         else{
-            echo "<script>alert('Vous êtes un robot');</script>";
+            echo "<p class='p_css'>Vous êtes un robot</p>";
         }  
         return 0;
     };   
@@ -94,16 +94,16 @@
 
 
             if ($infos == $tableau_assoc){
-                echo "<p>Cette personne est déjà dans votre carnet</p>";
+                echo "< class='p_css'p>Cette personne est déjà dans votre carnet</p>";
             }
             else{
                 $query = "UPDATE Coordonnees SET nom=$last_name, prenom=$name, phoneNumber=$phone, email=$email, groups=$groups WHERE email=$email AND idUsers = $id;";
                 $madb->query($query);
-                echo "<p>Les informations de cette personne ont été modifié avec succès</p>";
+                echo "<p class='p_css'>Les informations de cette personne ont été modifié avec succès</p>";
             }
         }
         else{
-            echo "<script>alert('Vous êtes un robot');</script>";
+            echo "<p class='p_css'>Vous êtes un robot</p>";
         }  
         return 0;
     };

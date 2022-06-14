@@ -59,10 +59,10 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
                         <li>
-                            <a class="dropdown-item" href="#">Mon profil (<?php echo $_SESSION["login"] ?>)</a>
+                            <a class="dropdown-item" href="profil.php">Mon profil (<?php echo $_SESSION["login"] ?>)</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="logout.php">Se déconnecter</a>
+                            <a class="+" href="logout.php">Se déconnecter</a>
                         </li>
                     </ul>
                 </div>
@@ -196,7 +196,7 @@
             <!-- Copyright -->
             <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
                 © 2020 Copyright:
-                <a class="text-dark" href="https://mdbootstrap.com/">GRIGNOUX-LEVERT Ewan</a>
+                <a class="text-dark" href="https://github.com/EwanGL">GRIGNOUX-LEVERT Ewan</a>
             </div>
             <!-- Copyright -->
         </footer>

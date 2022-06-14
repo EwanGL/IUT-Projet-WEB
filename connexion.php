@@ -56,6 +56,8 @@
                         $_SESSION["status"] = $row[3];
                         $_SESSION["login"] = $row[1];
                         $_SESSION["passwd"] = $row[2];
+                        $_SESSION["img"] = $row[4];
+
                         
                         connection_log($_SESSION["login"], $_SESSION["status"]);
                         
@@ -64,7 +66,7 @@
                     }
                     
                     else{
-                        echo '<p>failed</p>';
+                        echo '<p class="p_css">Nous ne connaissons pas ce couple login/mot de passe</p>';
                         connection_log($login, "");
                     }
                 }
@@ -75,7 +77,7 @@
             <!-- Copyright -->
             <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
                 © 2020 Copyright:
-                <a class="text-dark" href="https://mdbootstrap.com/">GRIGNOUX-LEVERT Ewan</a>
+                <a class="text-dark" href="https://github.com/EwanGL">GRIGNOUX-LEVERT Ewan</a>
             </div>
             <!-- Copyright -->
         </footer>

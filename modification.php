@@ -64,10 +64,7 @@
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
                             <li>
-                                <a class="dropdown-item" href="#">My profile (<?php echo $_SESSION['login'] ?>)</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">Settings</a>
+                                <a class="dropdown-item" href="profil.php">My profile (<?php echo $_SESSION['login'] ?>)</a>
                             </li>
                             <li>
                                 <a class="dropdown-item" href="logout.php">Logout</a>
@@ -160,79 +157,79 @@
             </div>
             
             <div class="col-md-2 ins_radio">
-                <input class="form-check-input" type="radio" name="groups" id="inlineRadio7" value="Professionnel" />
+                <input class="form-check-input" type="radio" name="groups" id="inlineRadio7" value="Travail" />
                 <label class="form-check-label" for="inlineRadio1">Professionnel</label>
             </div>
             
             <div class="col-md-2 ins_radio">
-                <input class="form-check-input" type="radio" name="groups" id="inlineRadio8" value="Autres" />
+                <input class="form-check-input" type="radio" name="groups" id="inlineRadio8" value="Autre" />
                 <label class="form-check-label" for="inlineRadio1">Autres</label>
             </div>';
         }
         if ($infos['groups'] == "Famille"){
             echo '
             <div class="col-md-2 ins_radio">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5"  value="Principal" />
+                <input class="form-check-input" type="radio" name="groups" id="inlineRadio5"  value="Principal" />
                 <label class="form-check-label" for="inlineRadio1">Principal</label>
             </div>
 
             <div class="col-md-2 ins_radio">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio6" checked value="Famille" />
+                <input class="form-check-input" type="radio" name="groups" id="inlineRadio6" checked value="Famille" />
                 <label class="form-check-label" for="inlineRadio1">Famille</label>
             </div>
             
             <div class="col-md-2 ins_radio">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio7" value="Professionnel" />
+                <input class="form-check-input" type="radio" name="groups" id="inlineRadio7" value="Travail" />
                 <label class="form-check-label" for="inlineRadio1">Professionnel</label>
             </div>
             
             <div class="col-md-2 ins_radio">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio8" value="Autres" />
+                <input class="form-check-input" type="radio" name="groups" id="inlineRadio8" value="Autre" />
                 <label class="form-check-label" for="inlineRadio1">Autres</label>
             </div>';
         }
         if ($infos['groups'] == "Travail"){
             echo '
             <div class="col-md-2 ins_radio">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5"  value="Principal" />
+                <input class="form-check-input" type="radio" name="groups" id="inlineRadio5"  value="Principal" />
                 <label class="form-check-label" for="inlineRadio1">Principal</label>
             </div>
 
             <div class="col-md-2 ins_radio">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio6" value="Famille" />
+                <input class="form-check-input" type="radio" name="groups" id="inlineRadio6" value="Famille" />
                 <label class="form-check-label" for="inlineRadio1">Famille</label>
             </div>
             
             <div class="col-md-2 ins_radio">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio7" checked value="Professionnel" />
+                <input class="form-check-input" type="radio" name="groups" id="inlineRadio7" checked value="Travail" />
                 <label class="form-check-label" for="inlineRadio1">Professionnel</label>
             </div>
             
             <div class="col-md-2 ins_radio">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio8" value="Autres" />
+                <input class="form-check-input" type="radio" name="groups" id="inlineRadio8" value="Autre" />
                 <label class="form-check-label" for="inlineRadio1">Autres</label>
             </div>';
         }
         
-        if ($infos['groups'] == "Autres"){
+        if ($infos['groups'] == "Autre"){
             echo '
             <div class="col-md-2 ins_radio">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio9"  value="Principal" />
+                <input class="form-check-input" type="radio" name="groups" id="inlineRadio9"  value="Principal" />
                 <label class="form-check-label" for="inlineRadio1">Principal</label>
             </div>
 
             <div class="col-md-2 ins_radio">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio10" value="Famille" />
+                <input class="form-check-input" type="radio" name="groups" id="inlineRadio10" value="Famille" />
                 <label class="form-check-label" for="inlineRadio1">Famille</label>
             </div>
             
             <div class="col-md-2 ins_radio">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio11" value="Professionnel" />
+                <input class="form-check-input" type="radio" name="groups" id="inlineRadio11" value="Travail" />
                 <label class="form-check-label" for="inlineRadio1">Professionnel</label>
             </div>
             
             <div class="col-md-2 ins_radio">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio12" checked value="Autres" />
+                <input class="form-check-input" type="radio" name="groups" id="inlineRadio12" checked value="Autre" />
                 <label class="form-check-label" for="inlineRadio1">Autres</label>
             </div>';
         }
@@ -262,7 +259,7 @@
             <!-- Copyright -->
             <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
                 © 2020 Copyright:
-                <a class="text-dark" href="https://mdbootstrap.com/">GRIGNOUX-LEVERT Ewan</a>
+                <a class="text-dark" href="https://github.com/EwanGL">GRIGNOUX-LEVERT Ewan</a>
             </div>
             <!-- Copyright -->
         </footer>
